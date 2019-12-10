@@ -85,10 +85,10 @@ public class Timer : MonoBehaviour
             counter--;
         }
         isPlaying = !isPlaying;
-        btnStart.GetComponentInChildren<Text>().text = "PREPARAR";
+        btnStart.GetComponentInChildren<Text>().text = "READY";
         btnStart.GetComponentInChildren<Text>().color = Color.black;
         btnStart.image.color = Color.yellow;
-        txtCounter.text = "FIM";
+        txtCounter.text = "TIME'S OVER";
     }
     
     IEnumerator OscListener()
@@ -126,7 +126,7 @@ public class Timer : MonoBehaviour
     {
         txtCounter.color = Color.green;
         counterRoutine = StartCoroutine(Countdown(_time));
-        btnStart.GetComponentInChildren<Text>().text = "PARAR";
+        btnStart.GetComponentInChildren<Text>().text = "STOP";
         btnStart.GetComponentInChildren<Text>().color = Color.white;
         inputTime.SetActive(false);
         btnConfirm.gameObject.SetActive(false);
@@ -139,7 +139,7 @@ public class Timer : MonoBehaviour
         {
             StopCoroutine(counterRoutine);
         }
-        btnStart.GetComponentInChildren<Text>().text = "INICIAR";
+        btnStart.GetComponentInChildren<Text>().text = "START";
         btnStart.GetComponentInChildren<Text>().color = Color.black;
         btnStart.image.color = Color.green;
         counter = time;
