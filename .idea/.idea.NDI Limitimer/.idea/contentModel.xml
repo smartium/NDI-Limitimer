@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="_APP" t="Include">
           <e p="Scripts" t="Include">
+            <e p="Info.cs" t="Include" />
             <e p="OscReceiver.cs" t="Include" />
             <e p="SetResolution.cs" t="Include" />
             <e p="Timer.cs" t="Include" />

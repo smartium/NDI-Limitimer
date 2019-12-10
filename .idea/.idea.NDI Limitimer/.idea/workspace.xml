@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a69086a7-cb7b-4559-af68-b4002b340bfb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.NDI Limitimer/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.NDI Limitimer/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NDI Limitimer/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NDI Limitimer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NDI Limitimer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_APP/Scenes/Presenter.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_APP/Scenes/Presenter.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_APP/Scripts/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_APP/Scripts/Timer.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/OscJack/Runtime/Base/OscServer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_APP/Scripts/Info.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_APP/Scripts/SetResolution.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_APP/Scripts/Timer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_APP/Scripts/OscReceiver.cs" root0="FORCE_HIGHLIGHTING" />
@@ -93,7 +90,7 @@
       <workItem from="1574747400722" duration="6761000" />
       <workItem from="1574822445525" duration="4703000" />
       <workItem from="1574829053153" duration="295000" />
-      <workItem from="1575942002150" duration="479000" />
+      <workItem from="1575942002150" duration="1073000" />
     </task>
     <servers />
   </component>
