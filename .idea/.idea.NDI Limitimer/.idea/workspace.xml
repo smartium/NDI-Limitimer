@@ -15,7 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/OscJack/Runtime/Base/OscServer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_APP/Scripts/Info.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_APP/Scripts/Info.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_APP/Scripts/SetResolution.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_APP/Scripts/Timer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_APP/Scripts/OscReceiver.cs" root0="FORCE_HIGHLIGHTING" />
@@ -27,6 +27,7 @@
         <option value="$PROJECT_DIR$/Assets/_APP/Scripts/OscReceiver.cs" />
         <option value="$PROJECT_DIR$/Assets/_APP/Scripts/SetResolution.cs" />
         <option value="$PROJECT_DIR$/Assets/_APP/Scripts/Timer.cs" />
+        <option value="$PROJECT_DIR$/Assets/_APP/Scripts/Info.cs" />
       </list>
     </option>
   </component>
@@ -90,7 +91,7 @@
       <workItem from="1574747400722" duration="6761000" />
       <workItem from="1574822445525" duration="4703000" />
       <workItem from="1574829053153" duration="295000" />
-      <workItem from="1575942002150" duration="1073000" />
+      <workItem from="1575942002150" duration="1851000" />
     </task>
     <servers />
   </component>
