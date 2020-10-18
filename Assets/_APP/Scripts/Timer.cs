@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
 
     private int counter;
     private bool isPlaying = false;
+    private string mode = "regressive";
     private Coroutine counterRoutine;
     
     // Start is called before the first frame update
@@ -66,14 +67,42 @@ public class Timer : MonoBehaviour
         {
             setCounterDisplay();
         }
+
+        if (counter < 1)
+        {
+            mode = "progressive";
+        }
+
+        if (Input.GetKeyDown("space"))
+        {
+            print("space key was pressed");
+            if (isPlaying)
+            {
+                stopTimer();
+            }
+            else
+            {
+                if (counter < 1)
+                {
+                    stopTimer("reset");
+                }
+                else
+                {
+                    startTimer(time);
+                }
+            }
+
+            isPlaying = !isPlaying;
+        }
     }
     
     IEnumerator Countdown (int seconds) {
         counter = seconds;
-        while (counter > -1) {
+        while (counter > -1)
+        {
             yield return new WaitForSeconds (1);
             //print(counter);
-            if (counter <= Math.Round(time*0.2f)+1 && counter > Math.Round(time*0.1f))
+            if (mode == "regressive" && counter <= Math.Round(time*0.2f)+20 && counter > Math.Round(time*0.1f))
             {
                txtCounter.color = Color.yellow;
             }
@@ -82,13 +111,25 @@ public class Timer : MonoBehaviour
             {
                 txtCounter.color = Color.red;
             }
-            counter--;
+
+            //counter--;
+
+            if (mode == "regressive")
+            {
+                counter = counter - 1;
+            }
+            if (mode == "progressive")
+            {
+                counter = counter + 1;
+            }
+
         }
-        isPlaying = !isPlaying;
-        btnStart.GetComponentInChildren<Text>().text = "READY";
-        btnStart.GetComponentInChildren<Text>().color = Color.black;
-        btnStart.image.color = Color.yellow;
-        txtCounter.text = "TIME'S OVER";
+        //isPlaying = !isPlaying;
+        //btnStart.GetComponentInChildren<Text>().text = "READY";
+        //btnStart.GetComponentInChildren<Text>().color = Color.black;
+        //btnStart.image.color = Color.yellow;
+        //txtCounter.text = "TIME'S OVER";
+        
     }
     
     IEnumerator OscListener()
@@ -138,10 +179,12 @@ public class Timer : MonoBehaviour
         if (_reset != "reset")
         {
             StopCoroutine(counterRoutine);
+            btnStart.image.color = Color.green;
+            mode = "regressive";
         }
         btnStart.GetComponentInChildren<Text>().text = "START";
         btnStart.GetComponentInChildren<Text>().color = Color.black;
-        btnStart.image.color = Color.green;
+        
         counter = time;
         inputTime.SetActive(true);
         btnConfirm.gameObject.SetActive(true);

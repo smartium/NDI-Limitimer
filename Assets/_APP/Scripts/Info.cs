@@ -11,6 +11,7 @@ public class Info : MonoBehaviour
     {
         btnInfo.onClick.AddListener(delegate
         {
+            Application.OpenURL("https://smartium.github.io/NDI-Limitimer/");
         });
     }
 
