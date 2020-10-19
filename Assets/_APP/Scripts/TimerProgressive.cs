@@ -15,9 +15,9 @@ public class TimerProgressive : MonoBehaviour
     public Button btnConfirm;
     public Button btnStart;
 
-    private int counter;
+    public int counter;
     private bool isPlaying = false;
-    private string mode = "regressive";
+    public string mode = "regressive";
     private Coroutine counterRoutine;
     
     // Start is called before the first frame update
