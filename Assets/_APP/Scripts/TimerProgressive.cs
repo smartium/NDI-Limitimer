@@ -32,19 +32,20 @@ public class TimerProgressive : MonoBehaviour
         
         btnStart.onClick.AddListener(delegate
         {
+            
             if (isPlaying)
             {
                 stopTimer();
             }
             else
             {
-                if (counter < 1)
+                if (mode == "progressive")
                 {
                     stopTimer("reset");
                 }
                 else
                 {
-                    startTimer(time);    
+                    startTimer(time);
                 }
             }
 
@@ -79,6 +80,7 @@ public class TimerProgressive : MonoBehaviour
             if (isPlaying)
             {
                 stopTimer();
+                stopTimer("reset");
             }
             else
             {
@@ -102,7 +104,7 @@ public class TimerProgressive : MonoBehaviour
         {
             yield return new WaitForSeconds (1);
             //print(counter);
-            if (mode == "regressive" && counter <= Math.Round(time*0.2f)+20 && counter > Math.Round(time*0.1f))
+            if (counter <= Math.Round(time*0.2f)+20 && counter > Math.Round(time*0.1f))
             {
                txtCounter.color = Color.yellow;
             }
@@ -122,12 +124,6 @@ public class TimerProgressive : MonoBehaviour
             }
 
         }
-        //isPlaying = !isPlaying;
-        //btnStart.GetComponentInChildren<Text>().text = "READY";
-        //btnStart.GetComponentInChildren<Text>().color = Color.black;
-        //btnStart.image.color = Color.yellow;
-        //txtCounter.text = "TIME'S OVER";
-        
     }
     
     IEnumerator OscListener()
@@ -174,10 +170,16 @@ public class TimerProgressive : MonoBehaviour
 
     void stopTimer(string _reset = "no")
     {
+        isPlaying = !isPlaying;
+        btnStart.GetComponentInChildren<Text>().text = "READY";
+        btnStart.GetComponentInChildren<Text>().color = Color.black;
+        btnStart.image.color = Color.yellow;
         if (_reset != "reset")
         {
             StopCoroutine(counterRoutine);
             btnStart.image.color = Color.green;
+            counter = time;
+            //txtCounter.color = Color.green;
             mode = "regressive";
         }
         btnStart.GetComponentInChildren<Text>().text = "START";

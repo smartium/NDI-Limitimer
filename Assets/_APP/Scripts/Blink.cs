@@ -31,6 +31,10 @@ public class Blink : MonoBehaviour
             {
                 txt.enabled = !txt.enabled;
             }
+            if (mode == "regressive")
+            {
+                txt.enabled = true;
+            }
         }
     }
 }
