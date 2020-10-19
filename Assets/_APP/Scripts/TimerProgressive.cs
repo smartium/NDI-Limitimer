@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using OscJack;
 
-public class Timer : MonoBehaviour
+public class TimerProgressive : MonoBehaviour
 {
     public Text txtCounter;
     public int time;
@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
 
     private int counter;
     private bool isPlaying = false;
+    private string mode = "regressive";
     private Coroutine counterRoutine;
     
     // Start is called before the first frame update
@@ -67,6 +68,11 @@ public class Timer : MonoBehaviour
             setCounterDisplay();
         }
 
+        if (counter < 1)
+        {
+            mode = "progressive";
+        }
+
         if (Input.GetKeyDown("space"))
         {
             print("space key was pressed");
@@ -96,7 +102,7 @@ public class Timer : MonoBehaviour
         {
             yield return new WaitForSeconds (1);
             //print(counter);
-            if (counter <= Math.Round(time * 0.2f) + 20 && counter > Math.Round(time * 0.1f))
+            if (mode == "regressive" && counter <= Math.Round(time*0.2f)+20 && counter > Math.Round(time*0.1f))
             {
                txtCounter.color = Color.yellow;
             }
@@ -106,14 +112,22 @@ public class Timer : MonoBehaviour
                 txtCounter.color = Color.red;
             }
 
-            counter -= 20;
-        }
-        isPlaying = !isPlaying;
-        btnStart.GetComponentInChildren<Text>().text = "READY";
-        btnStart.GetComponentInChildren<Text>().color = Color.black;
-        btnStart.image.color = Color.yellow;
-        txtCounter.text = "TIME'S OVER";
+            if (mode == "regressive")
+            {
+                counter -= 20;
+            }
+            if (mode == "progressive")
+            {
+                counter += 1;
+            }
 
+        }
+        //isPlaying = !isPlaying;
+        //btnStart.GetComponentInChildren<Text>().text = "READY";
+        //btnStart.GetComponentInChildren<Text>().color = Color.black;
+        //btnStart.image.color = Color.yellow;
+        //txtCounter.text = "TIME'S OVER";
+        
     }
     
     IEnumerator OscListener()
@@ -164,6 +178,7 @@ public class Timer : MonoBehaviour
         {
             StopCoroutine(counterRoutine);
             btnStart.image.color = Color.green;
+            mode = "regressive";
         }
         btnStart.GetComponentInChildren<Text>().text = "START";
         btnStart.GetComponentInChildren<Text>().color = Color.black;
