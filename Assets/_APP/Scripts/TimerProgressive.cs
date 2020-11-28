@@ -116,7 +116,7 @@ public class TimerProgressive : MonoBehaviour
 
             if (mode == "regressive")
             {
-                counter -= 20;
+                counter -= 1;
             }
             if (mode == "progressive")
             {

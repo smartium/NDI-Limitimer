@@ -106,13 +106,13 @@ public class Timer : MonoBehaviour
                 txtCounter.color = Color.red;
             }
 
-            counter -= 20;
+            counter -= 1;
         }
         isPlaying = !isPlaying;
         btnStart.GetComponentInChildren<Text>().text = "READY";
         btnStart.GetComponentInChildren<Text>().color = Color.black;
         btnStart.image.color = Color.yellow;
-        txtCounter.text = "TIME'S OVER";
+        txtCounter.text = "OVER";
 
     }
     
